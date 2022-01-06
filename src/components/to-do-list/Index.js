@@ -22,10 +22,12 @@ function Index() {
   });
 
   useEffect(() => {
+    // get list data to-do-list
     dispatch(getListData());
   }, [dispatch]);
 
   const del = (id) => {
+    // delete data
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -43,6 +45,7 @@ function Index() {
   };
 
   const update = (id) => {
+    // melakukan update status
     dispatch(updateStatus(id));
   };
 
@@ -54,9 +57,6 @@ function Index() {
         type={modal.type}
         dataModal={modal.data}
       />
-      {/* {console.log(
-        getListDataResult.sort((a, b) => (b.createdAt > a.createdAt ? 1 : -1))
-      )} */}
       <div className="container page-todo bootstrap snippets bootdeys">
         <div className="tasks">
           <div className="task-list">

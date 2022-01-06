@@ -14,6 +14,7 @@ function ModalAddEdit({ show, onHide, type, dataModal }) {
   });
 
   useEffect(() => {
+    // initial value berdasarkan jenis form
     if (type === "edit") {
       setData({
         id: dataModal.id,
@@ -30,6 +31,7 @@ function ModalAddEdit({ show, onHide, type, dataModal }) {
   }, [show]);
 
   const save = () => {
+    // proses penyimpanan
     if (type === "add") {
       dispatch(
         addData({
